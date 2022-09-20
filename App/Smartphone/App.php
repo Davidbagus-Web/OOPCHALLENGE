@@ -8,10 +8,10 @@ class App {
     }
 
     public function cetak() {
-        $str = "DAFTAR HAPE : <br> ";
+        $str = "DAFTAR HP : <br> ";
 
         foreach( $this->daftarHape as $p) {
-            $str .= "- {$p->getInfoHape()} <br>";
+            $str .= "- {$p->getInfoHp()} <br>";
         }
 
         return $str;

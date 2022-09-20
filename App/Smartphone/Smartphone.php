@@ -8,7 +8,7 @@ abstract class Smartphone {
     }
 
     public function getMerk() {
-        return $this->merk;
+        return $this->merk ;
     }
 
     public function getTipe() {
@@ -16,51 +16,57 @@ abstract class Smartphone {
     }
 
     public function getVolume() {
-        return $this->volume;
+        return "Volume Sekarang : {$this->volume} <br>";
     }
 
     public function nyalakan() {
-        return "Menyalakan {$this->getInfoHape()} ";
+        return "Menyalakan {$this->getInfoHp()} <br>";
     }
 
     public function matikan() {
-        return "Mematikan {$this->merk} {$this->tipe}";
+        return "Mematikan {$this->merk} {$this->tipe} <br>";
     }
 
-    public function volumeUp($volume) {
+    public function volumeUp() {
 
-        $str = $this->getVolume() + $volume;
-           
+        $str = $this->volume + 1;
+        
+        
         if($str <= 5) {
 
-            return "Volume Up ke ({$str})";
+           echo "Berhasil menambah volume  {$this->merk} {$this->tipe} <br>"; 
+           $this->volume = $str;
 
         }else{
 
-            return "Maksimal Volume 5!";
+            echo "Maksimal Volume 5! <br>";
         }
         
 
     }
 
-    public function volumeDown($volume) {
+    public function volumeDown() {
         
-        $str = $this->getVolume() - $volume;
-           
+        $str = $this->volume - 1;
+    
         if($str >= 0) {
 
-            return "Volume Down ke ({$str})";
+            echo "Berhasil mengurangi volume {$this->merk} {$this->tipe} <br>";
+            $this->volume = $str;
+
 
         }else{
 
-            return "Minimal Volume 0!";
+            echo "Minimal Volume 0!!";
         }
     }
 
     abstract public function UI();
  
-    public function getInfoHape() {
+    public function getInfoHp() {
         return "{$this->merk} {$this->getTipe()}";
     }
 }
+
+
 ?>
